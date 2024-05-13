@@ -17,7 +17,7 @@
   </head>
   <body class="page">
     <header class="header">
-      <h1 class="title">&lt/HTML&gt</h1>
+      <h1 class="title">&lt;/HTML&gt;</h1>
       <h2 class="title-small">закрывающий тег</h2>
       <nav class="theme-menu header__theme-menu">
         <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
@@ -55,10 +55,10 @@
           <div class="img">
             <img
               class="cat many-filter"
-              src="./images/cat (0).jpg"
+              src="./images/cat(0).jpg"
               alt="Котик еще не подозревает во что ввязался"
             />
-            <span class="lable">&ltНачало&gt</span>
+            <span class="lable">&lt;Начало&gt;</span>
           </div>
           <p class="main-text">
             Это было самое начало пути. На этом этапе важно было проникнуться
@@ -109,10 +109,10 @@
           <div class="img">
             <img
               class="cat contrast"
-              src="./images/cat (3).jpg"
+              src="./images/cat(3).jpg"
               alt="Котик валяется"
             />
-            <span class="lable">&ltЛёгкость&gt</span>
+            <span class="lable">&lt;Лёгкость&gt;</span>
           </div>
           <p class="main-text">
             На первых этапах мы работали со страхами и сомнениями, которые часто
@@ -165,10 +165,10 @@
           <div class="img">
             <img
               class="cat blur"
-              src="./images/cat (1).jpg"
+              src="./images/cat(1).jpg"
               alt="Котик кричит!"
             />
-            <span class="lable">&ltГнев&gt</span>
+            <span class="lable">&lt;Гнев&gt;</span>
           </div>
           <p class="main-text">
             Первый проект — позади! Но это всё ещё самое начало пути. Радость
@@ -221,10 +221,10 @@
           <div class="img">
             <img
               class="cat opacity"
-              src="./images/cat (5).jpg"
+              src="./images/cat(5).jpg"
               alt="Котик ест"
             />
-            <span class="lable">&ltЕДА&gt</span>
+            <span class="lable">&lt;ЕДА&gt;</span>
           </div>
           <p class="main-text">
             На этом этапе вы уже достаточно разбирались в основах вёрстки, чтобы
@@ -277,10 +277,10 @@
           <div class="img">
             <img
               class="cat brightness"
-              src="./images/cat (8).jpg"
+              src="./images/cat(8).jpg"
               alt="Котик спит"
             />
-            <span class="lable">&ltСОН&gt</span>
+            <span class="lable">&lt;СОН&gt;</span>
           </div>
           <p class="main-text">
             Всё это время вы были не одиноки (хотя, возможно, иногда и
@@ -334,10 +334,10 @@
           <div class="img">
             <img
               class="cat saturate"
-              src="./images/cat (7).jpg"
+              src="./images/cat(7).jpg"
               alt="Котик снова злится"
             />
-            <span class="lable">&ltТорги&gt</span>
+            <span class="lable">&lt;Торги&gt;</span>
           </div>
           <p class="main-text">
             На этом курсе вы постоянно решали разные задачи. В какой-то момент
@@ -390,10 +390,10 @@
           <div class="img">
             <img
               class="cat grayscale"
-              src="./images/cat (4).jpg"
+              src="./images/cat(4).jpg"
               alt="Котик грустит"
             />
-            <span class="lable">&ltДепресия&gt</span>
+            <span class="lable">&lt;Депресия&gt;</span>
           </div>
           <p class="main-text">
             Во время учёбы часто возникает чувство, когда не знаешь, за что
@@ -446,10 +446,10 @@
           <div class="img">
             <img
               class="cat hue-rotate"
-              src="./images/cat (6).jpg"
+              src="./images/cat(6).jpg"
               alt="Котик полон надежд"
             />
-            <span class="lable">&ltНадежда&gt</span>
+            <span class="lable">&lt;Надежда&gt;</span>
           </div>
           <p class="main-text">
             Сейчас вы уже очень много знаете о вёрстке. Но это только начало.
@@ -517,21 +517,23 @@
         <span class="button__text">Сохранить на память</span>
       </button>
       <dialog id="dialog-id">
-        <div class="dialog-disket">
-          <svg class="floppy-svg" width="39" height="39" viewBox="0 0 39 39">
-            <use href="./svg/floppy.svg#floppy-svg"></use>
-          </svg>
-          <span class="button-text-dialog"
-            >Вставьте дискету, чтобы продолжить</span
+        <form>
+          <div class="dialog-disket">
+            <svg class="floppy-svg" width="39" height="39" viewBox="0 0 39 39">
+              <use href="./svg/floppy.svg#floppy-svg"></use>
+            </svg>
+            <span class="button-text-dialog"
+              >Вставьте дискету, чтобы продолжить</span
+            >
+          </div>
+          <button
+            class="dialog-ok"
+            type="button"
+            onclick="window['dialog-id'].close()"
           >
-        </div>
-        <button
-          class="dialog-ok"
-          type="button"
-          onclick="window['dialog-id'].close()"
-        >
-          <span class="button__text"> Ok</span>
-        </button>
+            <span class="button__text"> Ok</span>
+          </button>
+        </form>
       </dialog>
     </footer>
     <script src="./scripts/like.js"></script>
