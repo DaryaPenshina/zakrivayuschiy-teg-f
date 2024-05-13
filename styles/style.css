@@ -362,7 +362,6 @@ dialog {
   font-family: var(--accent-text);
   font-weight: var(--font-weight-main);
   font-size: 14px;
-  font-weight: 400;
   line-height: 21px;
 }
 .dialog-ok {
