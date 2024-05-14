@@ -5,11 +5,6 @@
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
 
-:root {
-  --content-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
-  --main-text: Inter-Variable, sans-serif;
-  --accent-text: PressStart2P-Regular, fantasy;
-}
 
 :root.theme-light {
   --font-weight-main: 400;
@@ -31,11 +26,12 @@
       transparent 4px
     ),
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
-  --Themes-background: rgba(255, 255, 255, 1);
+  --themes-background: rgba(255, 255, 255, 1);
   --button-color: rgba(255, 255, 255, 1);
   --name: rgba(0, 0, 0, 1);
   --color-sparks: red;
   --main-body: black;
+  --background-color: rgba(26, 26, 26, 0.2);
 }
 
 :root.theme-dark {
@@ -58,11 +54,12 @@
       transparent 4px
     ),
     linear-gradient(to bottom, #007f0c 0.01%, #004306);
-  --Themes-background: rgba(0, 0, 0, 1);
+  --themes-background: rgba(0, 0, 0, 1);
   --button-color: rgba(0, 204, 20, 1);
   --name: rgba(0, 204, 20, 1);
   --main-body: rgba(0, 204, 20, 1);
   --color-sparks: red;
+  --background-color: rgba(6, 88, 15, 0.9);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -86,11 +83,12 @@
         transparent 4px
       ),
       linear-gradient(to bottom, #007f0c 0.01%, #004306);
-    --Themes-background: rgba(0, 0, 0, 1);
+    --themes-background: rgba(0, 0, 0, 1);
     --button-color: rgba(0, 204, 20, 1);
     --name: rgba(0, 204, 20, 1);
     --main-body: rgba(0, 204, 20, 1);
     --color-sparks: red;
+    --background-color: rgba(6, 88, 15, 0.9);
   }
 }
 
@@ -115,11 +113,12 @@
         transparent 4px
       ),
       linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
-    --Themes-background: rgba(255, 255, 255, 1);
+    --themes-background: rgba(255, 255, 255, 1);
     --button-color: rgba(255, 255, 255, 1);
     --name: rgba(0, 0, 0, 1);
     --color-sparks: red;
     --main-body: black;
+    --background-color: rgba(26, 26, 26, 0.2);
   }
 }
 @media (width <= 375px) {

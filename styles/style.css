@@ -18,6 +18,7 @@
   font-family: var(--main-text);
   color: var(--accent-color-text);
   background-image: var(--background-image);
+  background-color: var(--background-color);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -29,7 +30,6 @@
   margin: 100px auto;
   font-family: var(--accent-text);
   text-align: left;
-  font-variation-settings: var(--font-weight-main);
   width: var(--content-size);
   border: 2px solid var(--accent-color-text);
 }
@@ -42,54 +42,52 @@
   line-height: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   padding-top: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
   padding-bottom: 20px;
-  font-variation-settings: var(--font-weight-main);
+  text-decoration: none;
+  text-transform: uppercase;
 }
 .title-small {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   line-height: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  font-variation-settings: var(--font-weight-main);
   text-transform: uppercase;
 }
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   margin: 25px auto;
+  left: 315px;
 }
 .theme-menu__button {
   background-color: transparent;
   border: none;
   font-size: 14px;
   text-transform: uppercase;
-  font-variation-settings: var(--font-weight-main);
   position: relative;
+  transition: opacity 0.3s ease;
+  padding: 0;
+  left: 10px;
 }
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
   color: var(--accent-color-text);
-  left: -16px;
+  left: -24px;
+  top: 0;
   animation: move-button 0.5s ease-in-out infinite alternate;
-}
-@keyframes move-button {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(4px);
-  }
 }
 .theme-menu__button:disabled {
   opacity: 0.6;
   pointer-events: none;
-  transition: opacity 0.3s ease;
 }
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
   cursor: pointer;
 }
-.theme-menu__button:disabled::after {
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+.theme-menu__button::after {
   content: "";
   position: absolute;
   display: block;
@@ -99,25 +97,12 @@
   bottom: 0;
   left: 0;
   opacity: 60%;
-  transition: opacity 0.3s ease;
+  transition: transform 0.3s ease;
+  transform-origin: left;
   transform: scaleX(0);
 }
-.theme-menu__button:focus {
-  outline: none;
-  opacity: 0.6;
-}
 .theme-menu__button:focus-visible::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: currentColor;
-  bottom: 0;
-  left: 0;
   transform: scaleX(1);
-  transition: transform 0.3s ease;
-  opacity: 0.6;
 }
 /* КАРТОЧКИ */
 .card {
@@ -128,32 +113,23 @@
   margin-bottom: 52px;
 }
 .title-card {
-  padding: 3px 24px 3px 10px;
+  margin: 5px 24px 4px 10px;
   font-size: 18px;
   font-family: var(--main-text);
-  font-variation-settings: var(--font-weight-bold);
+  font-variation-settings: "wght" var(--font-weight-bold);
   line-height: 21.78px;
   text-align: left;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
 }
-.img {
+.section-img {
   position: relative;
   width: clamp(var(--min-width), 100%, var(--max-width));
-  height: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
-}
-.car {
-  width: 100%;
-  height: 100%;
+  height: clamp(23.375rem, 16.2007rem + 30.6103vw, 43.75rem);
   border-top: 2px solid var(--accent-color-text);
   border-bottom: 2px solid var(--accent-color-text);
 }
-.cat {
+.img {
   object-fit: cover;
   object-position: center;
-  border-top: 2px solid var(--accent-color-text);
-  border-bottom: 2px solid var(--accent-color-text);
   width: 100%;
   height: 100%;
 }
@@ -165,7 +141,7 @@
   filter: contrast(80%);
 }
 .blur {
-  filter: blur(0.2rem);
+  filter: blur(0.1rem);
 }
 .opacity {
   filter: opacity(0.9);
@@ -192,70 +168,43 @@
   color: var(--accent-color-text);
   mix-blend-mode: hard-light;
   text-transform: uppercase;
+  opacity: 0.5;
 }
-@supports (-webkit-text-stroke: 2px var(--Themes-background)) {
+@supports (-webkit-text-stroke: 2px var(--themes-background)) {
   .lable {
-    -webkit-text-stroke: 2px var(--Themes-background);
+    -webkit-text-stroke: 1px var(--themes-background);
   }
 }
 
-@supports not (-webkit-text-stroke: 2px var(--Themes-background)) {
+@supports not (-webkit-text-stroke: 2px var(--themes-background)) {
   .lable {
-    text-shadow: 2px 2px 0 var(--Themes-background);
+    text-shadow: 1px 1px 0 var(--themes-background);
   }
 }
 .main-text {
   font-family: var(--main-text);
   margin: 25px;
   font-size: 18px;
-  font-variation-settings: var(--font-weight-main);
-}
-.text-memories {
-  font-family: var(--main-text);
-  font-variation-settings: var(--font-weight-main);
-  margin: 0 25px 25px;
-  font-size: 18px;
-}
-/* КНОПКА ЛАЙК */
-.button-group {
+  font-variation-settings: "wght" var(--font-weight-main);
   display: flex;
-  gap: 12px;
-  margin: 0 25px 25px auto;
+  flex-direction: column;
+  gap: 25px;
 }
-.card__icon-button {
-  width: 39px;
-  height: 38px;
-  background-color: transparent;
-  border: none;
-  outline: none;
-}
-.card__icon-button:focus-visible {
-  outline: 2px solid var(--accent-color-text);
-  transition: outline 0.3s ease;
-}
-.like-icon {
-  display: block;
-}
-.like-icon:hover {
-  cursor: pointer;
-}
-.card__like-button {
-  width: 130px;
-  height: 38px;
+/* ОБЩИЕ СТИЛИ ДЛЯ КНОПОК */
+.button {
   border: 2px solid var(--accent-color-text);
-  position: relative;
   overflow: hidden;
-  background-color: transparent;
+  background-color: var(--accent-color);
+  color: var(--accent-color-text);
 }
-.card__like-button:focus {
+.button:focus {
   outline: none;
 }
-.card__like-button:focus-visible {
-  outline: none;
+.button:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color-text);
   transition: box-shadow 0.3s ease;
 }
-.card__like-button::before {
+.button::before {
   content: "";
   position: absolute;
   display: block;
@@ -267,11 +216,8 @@
   z-index: 1;
   transition: transform 0.5s ease-in-out;
 }
-.card__like-button:hover::before {
+.button:hover::before {
   transform: translateX(100%);
-  cursor: pointer;
-}
-.card__like-button:hover {
   cursor: pointer;
 }
 .button__text {
@@ -284,73 +230,68 @@
   mix-blend-mode: difference;
   color: var(--button-color);
 }
+.button__text:hover {
+  cursor: pointer;
+}
+/* КНОПКА ЛАЙК */
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 0 25px 25px auto;
+}
+.card__icon-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--accent-color-text);
+  transition: outline 0.3s ease; /*Это правило устанавливается только к иконке, остальные свойства сгрупировала */
+}
+.like-icon {
+  display: block;
+}
+.like-icon:hover {
+  cursor: pointer;
+}
+.card__like-button {
+  width: 130px;
+  height: 38px;
+  position: relative;
+  background-color: transparent;
+}
+/* КНОПКА СОХРАНИТЬ */
 .button__save {
-  width: clamp(19.125rem, 18.0467rem + 4.6009vw, 22.1875rem);
-  border: 2px solid var(--accent-color-text);
-  padding: 15px 0;
-  margin: 52px auto 100px;
+  width: clamp(19.25rem, 18.6118rem + 2.723vw, 21.0625rem);
+  padding: 14px 17px 14px 16px;
+  margin: 5px auto 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 8px;
   position: relative;
-  background-color: var(--accent-color);
-  overflow: hidden;
 }
-.button__save:focus {
-  outline: none;
-}
-.button__save:focus-visible {
-  outline: none;
-  box-shadow: 2px 2px 0 var(--accent-color-text);
-  transition: box-shadow 0.3s ease;
-}
-.button__save::before {
-  content: "";
-  position: absolute;
-  display: block;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: var(--accent-color-text);
-  z-index: 1;
-  transition: transform 0.5s ease-in-out;
-}
-.button__save:hover::before {
-  transform: translateX(100%);
-}
-.button__save:hover {
-  cursor: pointer;
-}
-.floppy-svg2 {
-  width: 28px;
-  height: 29px;
+.floppy-svg-save {
+  width: 26px;
+  height: 27px;
   position: relative;
   z-index: 2;
   color: var(--button-color);
   mix-blend-mode: difference;
 }
-.sparks {
-  opacity: 0;
-}
-.core {
-  fill: transparent;
-}
-.main-body {
-  fill: transparent;
-}
+/* ДИАЛОГ */
 dialog {
   position: fixed;
   inset: 0;
   z-index: 3;
   width: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
-  height: 191px;
   background-color: var(--accent-color);
   border: 2px solid var(--accent-color-text);
   padding: 30px;
-  overflow: hidden;
 }
 .dialog-id::backdrop {
   background-color: rgb(0 0 0 / 0.75);
@@ -373,22 +314,10 @@ dialog {
   font-size: 14px;
   line-height: 21px;
 }
-.dialog-ok {
-  color: var(--accent-color-text);
+.dialog-button {
   text-transform: uppercase;
   width: clamp(16.0625rem, 15.2702rem + 3.3803vw, 18.3125rem);
   height: 38px;
   margin-top: 30px;
-  border: 2px solid var(--accent-color-text);
-  background-color: transparent;
-}
-.dialog-ok:hover {
-  cursor: pointer;
-}
-.dialog-ok:focus {
-  outline: none;
-}
-.dialog-ok:focus-visible {
-  box-shadow: 2px 2px 0 var(--accent-color-text);
-  transition: box-shadow 0.3s ease;
+  position: relative;
 }
