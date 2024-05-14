@@ -99,9 +99,3 @@
     opacity: 1;
   }
 }
-
-.like-icon.is-liked .main-body {
-  opacity: 1;
-  transition: opacity 0.1s linear;
-  transition-delay: 0s;
-}
