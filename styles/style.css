@@ -113,7 +113,7 @@
   margin-bottom: 52px;
 }
 .title-card {
-  margin: 5px 24px 4px 10px;
+  margin: 4px 24px 4px 10px;
   font-size: 18px;
   font-family: var(--main-text);
   font-variation-settings: "wght" var(--font-weight-bold);
@@ -123,7 +123,7 @@
 .section-img {
   position: relative;
   width: clamp(var(--min-width), 100%, var(--max-width));
-  height: clamp(23.375rem, 16.2007rem + 30.6103vw, 43.75rem);
+  height: clamp(23.51875rem, 16.3687rem + 30.507vw, 43.825rem);
   border-top: 2px solid var(--accent-color-text);
   border-bottom: 2px solid var(--accent-color-text);
 }
@@ -132,6 +132,38 @@
   object-position: center;
   width: 100%;
   height: 100%;
+}
+.main-text {
+  font-family: var(--main-text);
+  margin: 25px;
+  font-size: 18px;
+  font-variation-settings: "wght" var(--font-weight-main);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.lable {
+  position: absolute;
+  z-index: 1;
+  top: clamp(1.375rem, 1.309rem + 0.2817vw, 1.5625rem);
+  right: clamp(0.6875rem, 0.3794rem + 1.3146vw, 1.5625rem);
+  font-family: var(--accent-text);
+  font-size: 14px;
+  color: var(--accent-color-text);
+  mix-blend-mode: hard-light;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+@supports (-webkit-text-stroke: 2px var(--themes-background)) {
+  .lable {
+    -webkit-text-stroke: 1px var(--themes-background);
+  }
+}
+
+@supports not (-webkit-text-stroke: 2px var(--themes-background)) {
+  .lable {
+    text-shadow: 1px 1px 0 var(--themes-background);
+  }
 }
 /* ФИЛЬТРЫ */
 .brightness {
@@ -158,51 +190,19 @@
 .many-filter {
   filter: saturate(10%) hue-rotate(90deg);
 }
-.lable {
-  position: absolute;
-  z-index: 1;
-  top: clamp(1.5625rem, 1.5185rem + 0.1878vw, 1.6875rem);
-  right: clamp(0.8125rem, 0.5484rem + 1.1268vw, 1.5625rem);
-  font-family: var(--accent-text);
-  font-size: 14px;
-  color: var(--accent-color-text);
-  mix-blend-mode: hard-light;
-  text-transform: uppercase;
-  opacity: 0.5;
-}
-@supports (-webkit-text-stroke: 2px var(--themes-background)) {
-  .lable {
-    -webkit-text-stroke: 1px var(--themes-background);
-  }
-}
-
-@supports not (-webkit-text-stroke: 2px var(--themes-background)) {
-  .lable {
-    text-shadow: 1px 1px 0 var(--themes-background);
-  }
-}
-.main-text {
-  font-family: var(--main-text);
-  margin: 25px;
-  font-size: 18px;
-  font-variation-settings: "wght" var(--font-weight-main);
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
 /* ОБЩИЕ СТИЛИ ДЛЯ КНОПОК */
 .button {
   border: 2px solid var(--accent-color-text);
   overflow: hidden;
   background-color: var(--accent-color);
   color: var(--accent-color-text);
+  transition: box-shadow 0.3s ease;
 }
 .button:focus {
   outline: none;
 }
 .button:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color-text);
-  transition: box-shadow 0.3s ease;
 }
 .button::before {
   content: "";
@@ -222,7 +222,6 @@
 }
 .button__text {
   font-family: var(--accent-text);
-  font-variation-settings: var(--font-weight-main);
   font-size: 14px;
   line-height: 12.6px;
   position: relative;
@@ -238,7 +237,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 7px;
   margin: 0 25px 25px auto;
 }
 .card__icon-button {
@@ -246,10 +245,10 @@
   background-color: transparent;
   border: none;
   outline: none;
+  transition: outline 0.3s ease;
 }
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color-text);
-  transition: outline 0.3s ease; /*Это правило устанавливается только к иконке, остальные свойства сгрупировала */
 }
 .like-icon {
   display: block;
@@ -266,13 +265,13 @@
 /* КНОПКА СОХРАНИТЬ */
 .button__save {
   width: clamp(19.25rem, 18.6118rem + 2.723vw, 21.0625rem);
-  padding: 14px 17px 14px 16px;
+  padding: 12px;
   margin: 5px auto 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 15px;
   position: relative;
 }
 .floppy-svg-save {
